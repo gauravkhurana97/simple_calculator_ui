@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calculator - Gheorghe Marin Adrian</title>
+    </head>
+   
+
+    <link rel="stylesheet" href="style.css">
+    <body>
+        
+
+      <h1>#calculator challenge</h1>
+
+      <div id='calc-contain'>
+  
+          <form class="box" name="calculator" >
+            
+            
+            
+
+
+            <div class="form__group">
+              <input type="text" class="form__input add_voice_text" placeholder="-0.00" name="answer">
+              <label id="labeling" for="name" class="form__label">Answer</label>
+            </div>
+
+            <div class="clicks">
+
+            <div class="row">
+
+            <input type="button" id="one" data-key="97" value=" 1 " onclick="calculator.answer.value += '1'" />
+            <input type="button" data-key="98" value=" 2 " onclick="calculator.answer.value += '2'" />
+            <input type="button" data-key="99" value=" 3 " onclick="calculator.answer.value += '3'" />
+            <input type="button" data-key="+" value=" + " onclick="calculator.answer.value += '+'" />
+            <br/>
+          </div>
+          <div class="row">
+            
+            <input type="button" data-key="100" value=" 4 " onclick="calculator.answer.value += '4'" />
+            <input type="button" data-key="101" value=" 5 " onclick="calculator.answer.value += '5'" />
+            <input type="button" data-key="102" value=" 6 " onclick="calculator.answer.value += '6'" />
+            <input type="button" data-key="-" value=" - " onclick="calculator.answer.value += '-'" />
+            </br>
+          </div>
+          <div class="row">
+          
+            <input type="button" data-key="103" value=" 7 " onclick="calculator.answer.value += '7'" />
+            <input type="button" data-key="104" value=" 8 " onclick="calculator.answer.value += '8'" />
+            <input type="button" data-key="105" value=" 9 " onclick="calculator.answer.value += '9'" />
+            <input type="button" data-key="x" value=" x " onclick="calculator.answer.value += '*'" />
+            </br>
+          </div>
+        
+          <div class="row">
+
+            <input type="button" data-key="c" value=" c " onclick="calculator.answer.value = ''" />
+            <input type="button" data-key="96"  value=" 0 " onclick="calculator.answer.value += '0'" />
+            <input type="button"  id="equal" data-key="=" value=" = " onclick="calculator.answer.value = `Answer = ${eval(calculator.answer.value)}`" />
+            <input type="button"  data-key="/" value=" / " onclick="calculator.answer.value += '/'" />
+            </br>
+          </div>
+       
+
+            <input type="button"  id="speak" value="Want to do calculation by speaking.. ">
+            
+          </div>
+    
+          </form>
+    </div>
+    <div id="gaurav">
+      <p>  &copy Gaurav Khurana 2019</p>
+    </div>
+
+
+        <audio data-key="96"  id="audi" src="sounds/kick.wav"></audio>
+
+
+        <script src="main.js"></script>
+      </body>
+
+</html>
