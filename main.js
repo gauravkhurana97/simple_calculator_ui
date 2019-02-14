@@ -1,40 +1,37 @@
+document.querySelector(".clicks").addEventListener("click",(e)=>{
+  button = e.target.closest("input");
+  // console.log();
+  let msgstring = `${button.id}`
+  
+  message_value(msgstring);
 
-  function removeTransition(e) {
-    if (e.propertyName !== 'transform') return;
-    e.target.classList.remove('playing');
+})
+
+function message_value(messageinfo){
+
+const msg = new SpeechSynthesisUtterance();
+// let voices = [];
+msg.text = messageinfo;
+console.log(msg);
+
+
+function toggle(startOver = true) {
+  speechSynthesis.cancel();
+  if (startOver) {
+    speechSynthesis.speak(msg);
   }
+}
 
-  function playSound(e) {
-    const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
-
-    const key = document.querySelector(`div[data-key="${e.keyCode}"]`);
-    if (!audio) 
-{
-    return;
-
-}   
-
-    ;
-    audio.currentTime = 0;
-    audio.play();
-  }
-
-  const keys = Array.from(document.querySelectorAll('.key'));
-  keys.forEach(key => key.addEventListener('transitionend', removeTransition));
-  window.addEventListener('keydown', playSound);
+toggle();
+}
 
 
 
-    
-    
 
-    document.querySelector(".clicks").addEventListener("click",(e)=>{
-      button = e.target.closest("input");
-      const audio = document.querySelector("#audi");
-      button.classList.add("playing");
-      audio.currentTime = 0;
-      audio.play();
- })
+
+  
+  
+
 
 
 
@@ -64,7 +61,7 @@ console.log(poopScript);
 p.value = poopScript;
 
 setTimeout(()=>{
-  p.value=eval(p.value);
+p.value=eval(p.value);
 },2000)
 
 });
@@ -74,5 +71,10 @@ setTimeout(()=>{
 recognition.start();
 
 })
+
+
+
+ 
+
 
 
